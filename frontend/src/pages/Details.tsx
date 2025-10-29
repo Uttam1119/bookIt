@@ -75,7 +75,7 @@ export default function Details() {
       <main className="w-full px-35 py-8">
         <button
           onClick={() => nav(-1)}
-          className="text-sm text-neutral-800 hover:text-gray-700 mb-6 flex items-center gap-1 cursor-pointer"
+          className="font-semibold text-sm text-neutral-800 hover:text-gray-700 mb-6 flex items-center gap-1 cursor-pointer"
         >
           ← Details
         </button>
@@ -188,7 +188,7 @@ export default function Details() {
             {/* ABOUT */}
             <div className="mt-8">
               <h3 className="text-gray-800 font-medium mb-2">About</h3>
-              <div className="bg-gray-100 rounded-md p-3 text-sm text-gray-700">
+              <div className="bg-gray-100 rounded-md p-3 text-sm text-gray-400">
                 Scenic routes, trained guides, and safety briefing. Minimum age
                 10.
               </div>

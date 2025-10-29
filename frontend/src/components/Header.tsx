@@ -1,41 +1,51 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
+  onClearSearch?: () => void;
   placeholder?: string;
 }
 
 export default function Header({
   onSearch,
+  onClearSearch,
   placeholder = "Search experiences",
 }: HeaderProps) {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    setQuery("");
+    if (onClearSearch) onClearSearch();
+    navigate("/");
+  };
 
   return (
     <header className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
-      <div className="flex items-center justify-between w-full px-32 py-3">
+      <div className="flex flex-wrap items-center justify-between w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-3 gap-4">
         {/* Logo */}
-        <div className="flex items-center gap-1">
+        <div
+          className="flex items-center gap-0 flex-shrink-0 cursor-pointer"
+          onClick={handleLogoClick}
+        >
           <img
             src="/logo.webp"
             alt="logo"
-            className="w-10 h-10 object-contain"
+            className="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
           />
-          <div className="leading-none -ml-3 ">
-            <Link to="/" className="block text-left">
-              <div className="font-semibold text-lg text-neutral-800">
-                highway
-              </div>
-              <div className="font-semibold text-lg text-neutral-800 -mt-2.5">
-                delite
-              </div>
-            </Link>
+          <div className="leading-none -ml-3">
+            <div className="font-semibold text-sm sm:text-base text-neutral-800 tracking-tight">
+              highway
+            </div>
+            <div className="font-semibold text-sm sm:text-base text-neutral-800 -mt-2 tracking-tight">
+              delite
+            </div>
           </div>
         </div>
 
         {/* Search bar */}
-        <div className="flex items-center w-full max-w-md ml-auto gap-4">
+        <div className="flex items-center w-full sm:w-auto sm:flex-1 md:max-w-md ml-auto gap-2 sm:gap-4">
           <input
             type="text"
             placeholder={placeholder}
@@ -45,7 +55,7 @@ export default function Header({
           />
           <button
             onClick={() => onSearch(query.trim())}
-            className="px-5 py-2 bg-yellow-400 text-gray-900 font-medium rounded-md hover:bg-yellow-500 transition"
+            className="px-4 sm:px-5 py-2 bg-yellow-400 text-gray-900 font-medium rounded-md hover:bg-yellow-500 transition"
           >
             Search
           </button>

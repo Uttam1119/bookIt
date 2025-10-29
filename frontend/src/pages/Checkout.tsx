@@ -95,7 +95,7 @@ export default function Checkout() {
       <main className="w-full px-35 py-8">
         <button
           onClick={() => nav(-1)}
-          className="text-sm text-neutral-900 hover:text-gray-700 mb-6 flex items-center gap-1 cursor-pointer"
+          className="font-semibold text-sm text-neutral-900 hover:text-gray-700 mb-6 flex items-center gap-1 cursor-pointer"
         >
           ← Checkout
         </button>
@@ -106,7 +106,7 @@ export default function Checkout() {
             <div className="bg-gray-100 rounded-xl shadow-md p-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-500 mb-1">
                     Full name
                   </label>
                   <input
@@ -114,11 +114,22 @@ export default function Checkout() {
                     placeholder="Your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full border border-gray-300 bg-gray-200 rounded-md p-2 focus:ring-yellow-400 focus:outline-none"
+                    className={`w-full border rounded-md p-2 focus:ring-yellow-400 focus:outline-none 
+                    ${
+                      name && name.trim().length < 2
+                        ? "border-red-500 bg-red-50"
+                        : "border-gray-300 bg-gray-200"
+                    }`}
                   />
+                  {name && name.trim().length < 2 && (
+                    <p className="text-red-500 text-xs mt-1">
+                      Please enter a valid name
+                    </p>
+                  )}
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-500 mb-1">
                     Email
                   </label>
                   <input
@@ -126,8 +137,18 @@ export default function Checkout() {
                     placeholder="Your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full border border-gray-300 bg-gray-200 rounded-md p-2 focus:ring-yellow-400 focus:outline-none"
+                    className={`w-full border rounded-md p-2 focus:ring-yellow-400 focus:outline-none 
+      ${
+        email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+          ? "border-red-500 bg-red-50"
+          : "border-gray-300 bg-gray-200"
+      }`}
                   />
+                  {email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && (
+                    <p className="text-red-500 text-xs mt-1">
+                      Please enter a valid email address
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -170,7 +191,7 @@ export default function Checkout() {
                 />
                 <label
                   htmlFor="agree"
-                  className="text-sm text-gray-700 select-none"
+                  className="text-sm text-gray-500 select-none"
                 >
                   I agree to the terms and safety policy
                 </label>
@@ -191,11 +212,7 @@ export default function Checkout() {
               <div className="flex justify-between">
                 <span>Date</span>
                 <span className="font-medium text-gray-900">
-                  {new Date(slot.date).toLocaleDateString("en-IN", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
+                  {new Date(slot.date).toISOString().split("T")[0]}
                 </span>
               </div>
 

@@ -41,7 +41,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header onSearch={handleSearch} />
+      <Header
+        onSearch={handleSearch}
+        onClearSearch={() => setFiltered(exps)}
+        placeholder="Search experiences"
+      />
 
       <main className="w-full px-8 py-8">
         {loading ? (
