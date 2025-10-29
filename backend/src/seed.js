@@ -11,46 +11,92 @@ async function seed() {
 
     const exps = [
       {
-        title: "Sunset Kayaking",
-        location: "Goa Beach",
-        description: "Enjoy a peaceful kayak ride at sunset.",
-        price: 1200,
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        title: "Kayaking",
+        location: "Udupi",
+        image:
+          "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200",
+        price: 999,
         slots: [
-          { date: "2025-11-01", slotId: "exp1-s1", time: "16:00", capacity: 4 },
-          { date: "2025-11-02", slotId: "exp1-s2", time: "16:00", capacity: 4 },
+          { date: "2025-11-01", time: "07:00 am", capacity: 5 },
+          { date: "2025-11-01", time: "09:00 am", capacity: 2 },
+          { date: "2025-11-02", time: "04:00 pm", capacity: 4 },
         ],
       },
       {
-        title: "Mountain Hike",
-        location: "Himalayan Trail",
-        description: "A guided trek for intermediate hikers.",
-        price: 2500,
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        title: "Nandi Hills Sunrise",
+        location: "Bangalore",
+        image:
+          "https://images.unsplash.com/photo-1617957743100-67a54a1b8b6a?q=80&w=1200",
+        price: 899,
         slots: [
-          { date: "2025-11-05", slotId: "exp2-s1", time: "06:00", capacity: 8 },
-          { date: "2025-11-06", slotId: "exp2-s2", time: "06:00", capacity: 8 },
+          { date: "2025-11-01", time: "05:30 am", capacity: 10 },
+          { date: "2025-11-02", time: "06:00 am", capacity: 6 },
         ],
       },
       {
-        title: "City Food Walk",
-        location: "Old Town",
-        description: "Taste best street foods with a local guide.",
-        price: 900,
-        image: "https://images.unsplash.com/photo-1547592166-7a7f4f9f0f4f",
+        title: "Coffee Trail",
+        location: "Coorg",
+        image:
+          "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200",
+        price: 1299,
         slots: [
-          {
-            date: "2025-11-03",
-            slotId: "exp3-s1",
-            time: "18:00",
-            capacity: 10,
-          },
-          {
-            date: "2025-11-04",
-            slotId: "exp3-s2",
-            time: "18:00",
-            capacity: 10,
-          },
+          { date: "2025-11-01", time: "08:00 am", capacity: 4 },
+          { date: "2025-11-02", time: "10:00 am", capacity: 3 },
+        ],
+      },
+      {
+        title: "Boat Cruise",
+        location: "Sunderban",
+        image:
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200",
+        price: 999,
+        slots: [
+          { date: "2025-11-03", time: "11:00 am", capacity: 8 },
+          { date: "2025-11-04", time: "02:00 pm", capacity: 5 },
+        ],
+      },
+      {
+        title: "Bunjee Jumping",
+        location: "Manali",
+        image:
+          "https://images.unsplash.com/photo-1518593929751-4a238b4a9e53?q=80&w=1200",
+        price: 999,
+        slots: [
+          { date: "2025-11-02", time: "01:00 pm", capacity: 3 },
+          { date: "2025-11-03", time: "03:30 pm", capacity: 6 },
+        ],
+      },
+      {
+        title: "Nandi Hills Sunrise",
+        location: "Bangalore",
+        image:
+          "https://images.unsplash.com/photo-1522204501817-376f8e5ebd4f?q=80&w=1200",
+        price: 899,
+        slots: [
+          { date: "2025-11-01", time: "06:30 am", capacity: 5 },
+          { date: "2025-11-02", time: "07:00 am", capacity: 2 },
+        ],
+      },
+      {
+        title: "Coffee Trail",
+        location: "Coorg",
+        image:
+          "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1200",
+        price: 1299,
+        slots: [
+          { date: "2025-11-01", time: "08:00 am", capacity: 3 },
+          { date: "2025-11-02", time: "09:30 am", capacity: 1 },
+        ],
+      },
+      {
+        title: "Kayaking",
+        location: "Udupi, Karnataka",
+        image:
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200",
+        price: 999,
+        slots: [
+          { date: "2025-11-02", time: "07:00 am", capacity: 6 },
+          { date: "2025-11-02", time: "10:00 am", capacity: 2 },
         ],
       },
     ];
