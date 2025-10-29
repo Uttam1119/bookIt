@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../api";
 import { Experience } from "../types";
 import ExperienceCard from "../components/ExperienceCard";
@@ -43,13 +43,13 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header onSearch={handleSearch} />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="w-full px-8 py-8">
         {loading ? (
           <div className="flex items-center justify-center h-64">
             <Loader />
           </div>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mx-24 grid gap-y-6 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filtered.map((e) => (
               <ExperienceCard key={e._id || e.id} e={e} />
             ))}
