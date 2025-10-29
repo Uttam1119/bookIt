@@ -15,7 +15,8 @@ router.post("/", async (req, res) => {
     const exp = await Experience.findById(experienceId);
     if (!exp) return res.status(404).json({ error: "Experience not found" });
 
-    const slot = exp.slots.find((s) => s.slotId === slotId);
+    const slot = exp.slots.find((s) => s._id.toString() === slotId);
+
     if (!slot) return res.status(400).json({ error: "Slot not found" });
 
     const existingCount = await Booking.countDocuments({
