@@ -15,3 +15,10 @@ export type Experience = {
   image?: string;
   slots: Slot[];
 };
+
+export type PromoValidation = {
+  valid: boolean;
+  type?: "percent" | "flat";
+  amount?: number;
+  newPrice?: number;
+};

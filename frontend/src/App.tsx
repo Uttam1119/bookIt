@@ -8,7 +8,7 @@ import Result from "./pages/Result";
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="container mx-auto px-4 py-8 flex-1">
+      <main className="flex-1 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/experiences/:id" element={<Details />} />
